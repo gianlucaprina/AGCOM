@@ -3,4 +3,5 @@ data = pd.read_csv('AGCOM_BBmap_opendata_comuni_csv.csv',encoding='utf-8',delimi
 
 datanew = data[['COMUNE','REGIONE','P1','SPEED_DOWN_ADSL_AVG']]
 
-print(datanew.isna().sum())
+datanew['AvgSpeedProCapite'] = datanew['SPEED_DOWN_ADSL_AVG'] / datanew['P1']
+print(datanew['AvgSpeedProCapite'])
