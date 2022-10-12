@@ -1,4 +1,6 @@
 import pandas as pd
 data = pd.read_csv('AGCOM_BBmap_opendata_comuni_csv.csv',encoding='utf-8',delimiter=';')
 
-print(data)
+datanew = data[['COMUNE','REGIONE','P1','SPEED_DOWN_ADSL_AVG']]
+
+print(datanew.isna().sum())
